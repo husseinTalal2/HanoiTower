@@ -4,6 +4,7 @@ this is a puzzle game that is solved by recursion
 for more information about the puzzle just google it ^_^
 
 the output will be like this:
+
 move disc 1 from a to c
 
 move disc 2 from a to b

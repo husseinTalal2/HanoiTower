@@ -1,13 +1,13 @@
 public class HanoiTower{
-    static void tower(int discs, char from, char temp, char to){
+    static void tower(int discs, char source, char temporary, char destination){
         if(discs == 1){
-            System.out.println("move disc 1 from "+from+" to "+to);
+            System.out.println("move disc 1 from " + source + " to " + destination);
             return;
         }
         else {
-            tower(discs-1,from,to,temp);
-            System.out.println("move disc "+ discs +" from "+from+" to "+to);
-            tower(discs-1,temp,from,to);
+            tower(discs-1, source, destination, temporary);
+            System.out.println("move disc "+ discs +" from "+source+" to "+destination);
+            tower(discs-1, temporary, source, destination);
         }
     }
     public static void main(String[] args) {

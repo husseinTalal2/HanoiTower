@@ -1,3 +1,4 @@
+package HanoiTower;
 public class HanoiTower{
     static void tower(int discs, char source, char temporary, char destination){
         if(discs == 1){

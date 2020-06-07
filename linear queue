@@ -6,12 +6,10 @@ int front = -1;
 int queue[size];
 
 bool isFull(){
-    if(rear == size-1) return true;
-    return false;
+    return (rear == size-1);
 }
 bool isEmpty(){
-    if(rear == front) return true;
-    return false;
+    return (rear == front || rear == -1) ;
 }
 
 void enQueue(int value){
@@ -19,7 +17,9 @@ void enQueue(int value){
         cout<<"the queue is full"<<endl;
     } 
     else{
-        if(front == -1) front =0;
+        if(front == -1){
+            front = 0;
+        }
         rear++;
         queue[rear] = value;
     }

@@ -1,0 +1,61 @@
+#include <iostream>
+#define size 10
+using namespace std ;
+int rear = -1;
+int front = -1;
+int queue[size];
+
+bool isFull(){
+    if(rear == size-1) return true;
+    return false;
+}
+bool isEmpty(){
+    if(rear == front) return true;
+    return false;
+}
+
+void enQueue(int value){
+    if(isFull()){
+        cout<<"the queue is full"<<endl;
+    } 
+    else{
+        if(front == -1) front =0;
+        rear++;
+        queue[rear] = value;
+    }
+}
+
+int deQueue(){
+    if(isEmpty()){
+        cout<<"the queue is empty"<<endl;
+    }
+    else{
+        front++;
+        return queue[front-1];
+    }
+}
+int numOfElements(){
+    if(!isEmpty()) return rear-front+1;
+}
+void clear(){
+    front = -1;
+    rear = -1;
+}
+int main() {
+    enQueue(5);
+    enQueue(6);
+    enQueue(78);
+    enQueue(23);
+    enQueue(59);
+    enQueue(156);
+    enQueue(2015);
+    cout<<"deQueued : "<<deQueue()<<endl;
+    cout<<"deQueued : "<<deQueue()<<endl;
+    cout<<"deQueued : "<<deQueue()<<endl;
+    cout<<"number of elements : "<<numOfElements()<<endl;
+    if(!isEmpty()){
+        for(int i = front; i<=rear; i++){
+            cout<<"element in queue: "<<queue[i]<<endl;
+        }
+    }
+}
